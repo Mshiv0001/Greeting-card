@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  
+    <!-- ccs used for styling-->
+ <style>
+    body {
+        font-family: "Pacifico", cursive;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        text-align: center;
+        font-size: 50px;
+        padding: 10px;
+    }
+    input {
+        font-family: "Pacifico", cursive;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+    button {
+        font-family: "Pacifico", cursive;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    #greetingMessage {
+        margin-top: 10px;
+        font-size: 20px;
+        color: #222;
+    }
+  </style>
+</head>
+<body>
+    <h1 class="pacifico-regular">Greeting Card</h1> <!--iheading on screen-->
+    <input id ="NameInput" type="text" placeholder="Enter your Name"> <!--input box for user name-->
+    <button onclick="showgreeting()">Say Hello</button> <!-- creates button which on click will show greeting i.e. "say hello"-->
+    <p id="greetingmessage"></p> <!-- paragraph tag used to write paragraph-->
+
+    <script>
+        // this function runs when button is clicked
+        function showgreeting() {
+            // get the value entered by the user "Name"
+            let username = document.getElementById("NameInput").value;
+            // let - is used to declare a variable (to store data) which can be changed later 
+            // username - name of the variable
+            // document - refers to the whole html page (how js talk to page)
+            // . - used to access a property or method of an object
+            // getelementById("NameInput") - a fuction that finds an html element with the specific id
+            // NameInput - is the id of the element we want to grab
+            // .value - value inside the id
+            // ; - used ton finish a line
+
+            // create a greeting message
+            let message = "Hello, " + username + "! welcome"; 
+            // let is used here because diff. users have diff. names so not have only 1 name in message we used let
+            
+            document.getElementById("greetingmessage").innerText = message;
+            // innerText - property that gets the text inside the element
+            // message - the variable that was created earlier
+        }   
+    </script>
+</body>
+</html>
